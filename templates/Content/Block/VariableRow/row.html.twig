@@ -1,0 +1,22 @@
+<div class="variable-row">
+    {% for column in columns %}
+        <div class="variable-row__column variable-row__column--{{ column.width }}">
+            <div class="variable-row__column__content">
+                {% for content in column.content %}
+                    {% if content.type == 'h1' %}
+                        <h1>{{ content.text }}</h1>
+
+                    {% elseif content.type == 'paragraph' %}
+                        <p>{{ content.text }}</p>
+
+                    {% elseif content.type == 'image' %}
+                        <img src="{{ asset(content.href) }}" alt="{{ content.text }}">
+
+                    {% elseif content.type == 'button' %}
+                        <a href="{{ content.href }}" class="button">{{ content.text }}</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</div>

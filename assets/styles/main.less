@@ -1,0 +1,26 @@
+@node-path: '../../node_modules';
+
+@import "variables.less";
+@import "base.less";
+@import "helpers.less";
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight&family=Quicksand:wght@300;500&display=swap');
+
+/* Third party styles */
+@import "normalize.css";
+@import "@{node-path}/swiper/swiper.less";
+
+/* Layout */
+@import "Layout/footer.less";
+@import "Layout/header.less";
+
+/* Content */
+
+//// Block
+//Article
+@import "Content/Block/Article/article-item.less";
+@import "Content/Block/Article/article-row.less";
+
+//Variable row
+@import "Content/Block/VariableRow/variable-row.less";

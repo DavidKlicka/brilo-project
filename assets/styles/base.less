@@ -1,0 +1,75 @@
+.container {
+    padding: 0 0.5em;
+
+    @media @query-lg {
+        padding: 0 2%;
+    }
+
+    &__row {
+        max-width: @web-width;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: @color-page;
+    color: @color-primary;
+    font-family: 'Inter Tight', sans-serif;
+    overflow-x: hidden;
+}
+
+ul {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: @font-size-large;
+    font-weight: 300;
+}
+
+h2 {
+    font-size: @font-size-big;
+    font-weight: 500;
+}
+
+p {
+    max-width: 60ch;
+}
+
+img {
+    max-width: 100%;
+}
+
+.button {
+    display: inline-block;
+    color: @color-primary;
+    background: @color-theme;
+    margin: 2.5em 0;
+    padding: 0.5em 1em;
+    width: 18em;
+    max-width: 100%;
+    text-align: center;
+    transition: @transition;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+        color: @color-white;
+        background-color: lighten(@color-theme, 10%);
+    }
+}

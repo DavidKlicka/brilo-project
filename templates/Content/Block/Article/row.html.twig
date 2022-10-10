@@ -1,0 +1,7 @@
+<div class="js-swiper-container article-row">
+    <div class="article-row__wrapper swiper-wrapper">
+        {% for item in articles %}
+            {{ include('Content/Block/Article/item.html.twig', {article: item, class: 'swiper-slide'}) }}
+        {% endfor %}
+    </div>
+</div>

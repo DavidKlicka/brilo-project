@@ -1,0 +1,11 @@
+<header id="Header" class="container">
+    <div class="container__row">
+        <ul class="menu-links">
+        {% for menuItem in menuItems %}
+            <li class="menu-links__item">
+                <a href="{{ menuItem.link }}">{{ menuItem.title }}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+</header>

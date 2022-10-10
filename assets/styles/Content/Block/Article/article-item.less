@@ -1,0 +1,98 @@
+@article-item-hover-effect-weight: 2rem;
+
+.article-item {
+    //width: 100%;
+    margin: 2em 0;
+    cursor: pointer;
+
+    @media @query-sm {
+        //width: 50%;
+    }
+
+    @media @query-vl {
+        //width: 33.33%;
+    }
+
+    &__thumbnail {
+        position: relative;
+        padding-bottom: 66.67%;
+        width: 100%;
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1.2);
+            transition: @transition;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            display: block;
+            border: @border-solid;
+            width: 90%;
+            height: 90%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: @transition;
+        }
+    }
+
+    &__content {
+        position: relative;
+        background: @color-theme;
+        padding: 1em;
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: @article-item-hover-effect-weight;
+            top: 0;
+            left: 0;
+            background: @color-theme;
+            transition: @transition;
+        }
+    }
+
+    &__heading {
+        transition: @transition;
+    }
+
+    &__perex {
+        transition: @transition
+    }
+
+    &:hover & {
+        &__thumbnail {
+            img {
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            &:after {
+                transform: translate(-50%, -50%) scale(1.5);
+            }
+        }
+
+        &__content {
+            &:before {
+                transform: translateY(-@article-item-hover-effect-weight);
+            }
+        }
+
+        &__heading {
+            transform: translateY(-@article-item-hover-effect-weight);
+        }
+
+        &__perex {
+            transform: translateY(-@article-item-hover-effect-weight);
+        }
+    }
+}
